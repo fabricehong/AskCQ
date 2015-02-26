@@ -3,6 +3,7 @@ __author__ = 'fabrice'
 
 import query
 import sys
+import pprint
 
 # xpath examples : https://code.google.com/p/jsonpath/wiki/Javascript
 # querybuilder REST api : https://docs.adobe.com/docs/en/cq/current/dam/customizing_and_extendingcq5dam/query_builder.html
@@ -16,7 +17,5 @@ if __name__ == '__main__':
     if len(sys.argv) == 4:
         print "url : ", url
         print "path : ", path
-    query.query(
-        url,
-        path
-    )
+    result = query.query(url, path)
+    pprint.pprint(result)
